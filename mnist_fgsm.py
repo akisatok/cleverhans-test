@@ -30,7 +30,7 @@ class Adversarial_Training(Model):
     def losses(self):
         losses = super(self.__class__, self).losses
         if self._at_loss is not None:
-            losses += [ (1 - self._alpha) * self._at_loss ]
+            losses += [ self._alpha * self._at_loss ]
         return losses
     # VAT loss
     def at_loss(self, eps):
